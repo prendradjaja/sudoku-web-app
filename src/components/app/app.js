@@ -142,6 +142,52 @@ function docKeyDownHandler (e, modalActive, setGrid, solved, inputMode) {
     if (match) {
         digit = match[1];
     }
+    let myDigit;
+
+    // myDigit = {
+    //   'KeyQ': 6,
+    //   'KeyW': 7,
+    //   'KeyE': 8,
+    //   'KeyR': 9,
+    //   // 'KeyT': ,
+    // }[keyName];
+
+    myDigit = {
+
+      // 'KeyA': 1,
+      // 'KeyS': 2,
+      // 'KeyD': 3,
+      // 'KeyF': 4,
+      // 'KeyG': 5,
+
+      'KeyA': 5,
+      'KeyS': 4,
+      'KeyD': 3,
+      'KeyF': 2,
+      'KeyG': 1,
+
+      // 'KeyZ': 6,
+      // 'KeyX': 7,
+      // 'KeyC': 8,
+      // 'KeyV': 9,
+
+      'KeyX': 9,
+      'KeyC': 8,
+      'KeyV': 7,
+      'KeyB': 6,
+
+    }[keyName];
+
+    // myDigit = {
+    //   // 'KeyQ': ,
+    //   'KeyW': 9,
+    //   'KeyE': 8,
+    //   'KeyR': 7,
+    //   'KeyT': 6,
+    // }[keyName];
+
+    digit = digit ?? myDigit;
+    console.log({digit, keyName});
     if (digit !== undefined) {
         setGrid((grid) => {
             let cellOp;
@@ -162,7 +208,10 @@ function docKeyDownHandler (e, modalActive, setGrid, solved, inputMode) {
         e.preventDefault();
         return;
     }
-    else if (keyName === "Backspace" || keyName === "Delete") {
+    else if (keyName === "Backspace" || keyName === "Delete"
+      // || keyName === 'KeyB'
+      || keyName === 'KeyZ'
+    ) {
         if (e.target === document.body) {
             // We don't want browser to treat this as a back button action
             e.preventDefault();
