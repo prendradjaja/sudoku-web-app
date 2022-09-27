@@ -219,10 +219,10 @@ function docKeyDownHandler (e, modalActive, setGrid, solved, inputMode) {
         setGrid((grid) => modelHelpers.updateSelectedCells(grid, 'clearCell'));
         return;
     }
-    else if (e.key === ".") {
-        setGrid((grid) => modelHelpers.updateSelectedCells(grid, 'pencilMarksToInner'));
-        return;
-    }
+    // else if (e.key === ".") {
+    //     setGrid((grid) => modelHelpers.updateSelectedCells(grid, 'pencilMarksToInner'));
+    //     return;
+    // }
     else if (e.key === "?") {
         setGrid((grid) => modelHelpers.showHintModal(grid));
         return;
@@ -231,11 +231,11 @@ function docKeyDownHandler (e, modalActive, setGrid, solved, inputMode) {
         setGrid((grid) => modelHelpers.applySelectionOp(grid, 'clearSelection'));
         return;
     }
-    else if ((keyName === "KeyZ" && ctrlOrMeta) || keyName === "BracketLeft") {
+    else if ((keyName === "KeyZ" && ctrlOrMeta) || keyName === "BracketLeft" || keyName === "KeyE") {
         setGrid((grid) => modelHelpers.undoOneAction(grid));
         return;
     }
-    else if ((keyName === "KeyY" && ctrlOrMeta) || keyName === "BracketRight") {
+    else if ((keyName === "KeyY" && ctrlOrMeta) || keyName === "BracketRight" || keyName === "KeyR") {
         setGrid((grid) => modelHelpers.redoOneAction(grid));
         return;
     }
