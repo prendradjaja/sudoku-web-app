@@ -210,7 +210,7 @@ function docKeyDownHandler (e, modalActive, setGrid, solved, inputMode) {
     }
     else if (keyName === "Backspace" || keyName === "Delete"
       // || keyName === 'KeyB'
-      || keyName === 'KeyZ'
+      || keyName === 'KeyE'
     ) {
         if (e.target === document.body) {
             // We don't want browser to treat this as a back button action
@@ -231,11 +231,11 @@ function docKeyDownHandler (e, modalActive, setGrid, solved, inputMode) {
         setGrid((grid) => modelHelpers.applySelectionOp(grid, 'clearSelection'));
         return;
     }
-    else if ((keyName === "KeyZ" && ctrlOrMeta) || keyName === "BracketLeft" || keyName === "KeyE") {
+    else if ((keyName === "KeyZ" && ctrlOrMeta) || keyName === "BracketLeft" || keyName === "KeyW") {
         setGrid((grid) => modelHelpers.undoOneAction(grid));
         return;
     }
-    else if ((keyName === "KeyY" && ctrlOrMeta) || keyName === "BracketRight" || keyName === "KeyR") {
+    else if ((keyName === "KeyY" && ctrlOrMeta) || keyName === "BracketRight" || keyName === "KeyQ") {
         setGrid((grid) => modelHelpers.redoOneAction(grid));
         return;
     }
